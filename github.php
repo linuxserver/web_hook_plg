@@ -67,14 +67,14 @@ class Web_hook {
 			$date = $data->version_date;
 			$int = $data->version_int;
 
-			if( date("Y-m-d") == $data->version_date ) {
+			if( date("Y.m.d") == $data->version_date ) {
 				$int = $int+=1;
 			} else {
-				$date = date("Y-m-d");
+				$date = date("Y.m.d");
 				$int = 1;
 			}
 		} else {
-			$date = date("Y-m-d");
+			$date = date("Y.m.d");
 			$int = 1;
 		}
 
@@ -106,7 +106,7 @@ $plg = '<?xml version=\'1.0\' standalone=\'yes\'?>
 	<!ENTITY name			"'.$this->name.'">
 	<!ENTITY displayName	"'.$this->displayName.'">
 	<!ENTITY author			"'.$this->author.'">
-	<!ENTITY plgVersion		"'.$date.'.'.$int.'">
+	<!ENTITY version		"'.$date.'.'.$int.'">
 	<!ENTITY pluginURL		"'.$this->plgurl.'">
 	<!ENTITY appURL			"'.$zip.'">
 	<!ENTITY installDir		"'.$this->install_dir.'">
@@ -115,7 +115,7 @@ $plg = '<?xml version=\'1.0\' standalone=\'yes\'?>
 <PLUGIN
 	name="&name;"
 	author="&author;"
-	version="&plgVersion;"
+	version="&version;"
 	pluginURL="&pluginURL;"
 	installDir="&installDir;"
 >
